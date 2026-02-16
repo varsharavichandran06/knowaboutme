@@ -50,14 +50,23 @@ const experienceCards = document.querySelectorAll('.experience-card');
 const modals = document.querySelectorAll('.modal');
 const modalCloses = document.querySelectorAll('.modal-close');
 
+console.log('Experience cards found:', experienceCards.length);
+console.log('Modals found:', modals.length);
+console.log('Close buttons found:', modalCloses.length);
+
 // Open modal when clicking on experience card or button
 experienceCards.forEach(card => {
     card.addEventListener('click', (e) => {
         const modalId = card.getAttribute('data-modal') + '-modal';
+        console.log('Clicked card with modal ID:', modalId);
         const modal = document.getElementById(modalId);
+        console.log('Modal element found:', modal);
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            console.log('Modal opened:', modalId);
+        } else {
+            console.error('Modal not found:', modalId);
         }
     });
 });

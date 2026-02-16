@@ -110,7 +110,9 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
+    background: linear-gradient(135deg, #1e3a8a 0%, #065f46 100%);
 }
 
 .hero-background {
@@ -120,13 +122,16 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
+    overflow: hidden;
 }
 
 .hero-bg-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.8);
+    object-position: center;
+    filter: brightness(0.4);
+    display: block;
 }
 
 .hero-overlay {
@@ -136,11 +141,13 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.6) 0%, rgba(16, 185, 129, 0.6) 100%);
+    z-index: 1;
 }
 
 .hero .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
 }
 
 .hero-content {
@@ -257,10 +264,15 @@ body {
 }
 
 /* Experience Section with Expandable Cards */
+.experience {
+    background: var(--bg-darker);
+}
+
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    width: 100%;
 }
 
 .experience-card {
@@ -271,11 +283,14 @@ body {
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .experience-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: var(--primary-color);
 }
 
 .company-logo {
@@ -288,22 +303,30 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: white;
+    padding: 10px;
+    background: white;
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .aws-logo {
-    background: linear-gradient(135deg, #FF9900, #FF6600);
+    background: white;
 }
 
 .microsoft-logo {
-    background: linear-gradient(135deg, #00A4EF, #0078D4);
+    background: white;
 }
 
 .ibm-logo {
-    background: linear-gradient(135deg, #0F62FE, #0043CE);
+    background: white;
 }
 
 .umass-logo {
-    background: linear-gradient(135deg, #881c1c, #5c0a0a);
+    background: linear-gradient(135deg, #761c1c, #7a1b2e);
 }
 
 .ssn-logo {
@@ -343,14 +366,15 @@ body {
     color: var(--text-light);
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 .expand-btn {
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     color: white;
     border: none;
-    padding: 0.6rem 1.2rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.9rem;
@@ -358,12 +382,23 @@ body {
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    margin-top: auto;
+    width: fit-content;
 }
 
 .expand-btn:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.expand-btn i {
+    transition: transform 0.3s ease;
+}
+
+.expand-btn:hover i {
+    transform: translateX(3px);
 }
 
 /* Modal Styles */
@@ -893,6 +928,11 @@ body {
 
     .experience-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experience-card {
+        min-height: auto;
     }
 
     .modal-content {
