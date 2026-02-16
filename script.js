@@ -4,8 +4,6 @@ const navMenu = document.getElementById('navMenu');
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
-    // Animate hamburger
     hamburger.classList.toggle('active');
 });
 
@@ -25,7 +23,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offset = 80; // Height of navbar
+            const offset = 80;
             const targetPosition = target.offsetTop - offset;
             
             window.scrollTo({
@@ -41,9 +39,56 @@ const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)';
     } else {
-        navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.3)';
+    }
+});
+
+// Modal functionality
+const experienceCards = document.querySelectorAll('.experience-card');
+const modals = document.querySelectorAll('.modal');
+const modalCloses = document.querySelectorAll('.modal-close');
+
+// Open modal when clicking on experience card or button
+experienceCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+        const modalId = card.getAttribute('data-modal') + '-modal';
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    });
+});
+
+// Close modal when clicking close button
+modalCloses.forEach(closeBtn => {
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const modal = closeBtn.closest('.modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+});
+
+// Close modal when clicking outside
+modals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        modals.forEach(modal => {
+            modal.classList.remove('active');
+        });
+        document.body.style.overflow = ''; // Restore scrolling
     }
 });
 
@@ -63,7 +108,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .education-card');
+const animatedElements = document.querySelectorAll('.experience-card, .project-card, .skill-category, .education-card');
 
 animatedElements.forEach(el => {
     el.style.opacity = '0';
@@ -93,7 +138,7 @@ function highlightNavigation() {
 
 window.addEventListener('scroll', highlightNavigation);
 
-// Type writer effect for hero subtitle (optional enhancement)
+// Type writer effect for hero subtitle
 const heroSubtitle = document.querySelector('.hero-subtitle');
 if (heroSubtitle) {
     const originalText = heroSubtitle.textContent;
@@ -108,7 +153,6 @@ if (heroSubtitle) {
         }
     }
     
-    // Start typing effect after a short delay
     setTimeout(typeWriter, 500);
 }
 

@@ -30,6 +30,10 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <img src="cover.png" alt="Background" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Hi, I'm <span class="highlight">Varsha Ravichandran</span></h1>
@@ -70,120 +74,403 @@
     <section id="experience" class="section experience">
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
+            <div class="experience-grid">
+                
                 <!-- AWS -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Graduate Research Extern</h3>
-                            <span class="company">Amazon Web Services (AWS)</span>
-                            <span class="duration">Jan 2026 - Present</span>
-                            <span class="location">Remote</span>
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Exploring how multi-agent RL primitives can be embedded into single-agent RL objectives so LLMs acquire strategic, multi-agent reasoning during training rather than at deployment</li>
-                            <li>Conducting literature survey on existing benchmarks to determine the best fit for the use case</li>
-                            <li>Project conducted as part of COMPSCI 698DS course at UMass Amherst</li>
-                        </ul>
+                <div class="experience-card" data-modal="aws">
+                    <div class="company-logo aws-logo">
+                        <i class="fab fa-aws"></i>
                     </div>
+                    <h3>Graduate Research Extern</h3>
+                    <p class="company-name">Amazon Web Services (AWS)</p>
+                    <p class="duration">Jan 2026 - Present</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
+                    <p class="brief-desc">Exploring multi-agent RL integration in LLM training objectives for strategic reasoning.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
                 <!-- Microsoft -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Software Engineering Intern</h3>
-                            <span class="company">Microsoft</span>
-                            <span class="duration">May 2025 - Aug 2025</span>
-                            <span class="location">Redmond, Washington</span>
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Designed, built, and deployed a self-correcting, code-adaptive DevOps AI agent to automate Azure Resource Provider code generation using LLMs, RAG, vector databases, and Azure DevOps, improving accuracy by 75%</li>
-                            <li>Implemented automated PR creation and build pipelines, reducing manual effort while following Responsible AI protocols</li>
-                            <li>Developed metadata-driven retrieval and error-feedback loops for continuous code improvement</li>
-                            <li>Deployed end-to-end AI-driven development workflow as a customer-facing web application</li>
-                        </ul>
+                <div class="experience-card" data-modal="microsoft">
+                    <div class="company-logo microsoft-logo">
+                        <i class="fab fa-microsoft"></i>
                     </div>
+                    <h3>Software Engineering Intern</h3>
+                    <p class="company-name">Microsoft</p>
+                    <p class="duration">May 2025 - Aug 2025</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Redmond, WA</p>
+                    <p class="brief-desc">Built self-correcting DevOps AI agent using LLMs, RAG, and Azure DevOps.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
-                <!-- Cisco -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Graduate Student Researcher</h3>
-                            <span class="company">UMass Amherst</span>
-                            <span class="duration">Jan 2025 - May 2025</span>
-                            <span class="location">Amherst, Massachusetts</span>
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Enhanced multi-document QA system using LLMs by implementing a verification layer to evaluate and select the most accurate answers</li>
-                            <li>Led prompt engineering efforts, achieving 20% improvement in answer accuracy on complex multi-hop questions</li>
-                            <li>Designed benchmarking strategies to assess system performance and reliability</li>
-                            <li>This project was done in collaboration with Cisco</li>
-                        </ul>
+                <!-- UMass / Cisco -->
+                <div class="experience-card" data-modal="umass">
+                    <div class="company-logo umass-logo">
+                        <i class="fas fa-university"></i>
                     </div>
+                    <h3>Graduate Student Researcher</h3>
+                    <p class="company-name">UMass Amherst (Cisco)</p>
+                    <p class="duration">Jan 2025 - May 2025</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Amherst, MA</p>
+                    <p class="brief-desc">Enhanced RAG system with verification layer, achieving 20% accuracy improvement.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
                 <!-- IBM Software Developer -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Software Developer</h3>
-                            <span class="company">IBM CIO</span>
-                            <span class="duration">Aug 2022 - June 2024</span>
-                            <span class="location">Bengaluru, India</span>
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Engineered advanced chatbot platforms using Django, Milvus, and LLMs (Mistral, Granite, FlanUL) with RAG for query processing</li>
-                            <li>Reduced user effort by 60% through integration of Cloud Object Storage and Postgres for high-speed answer retrieval</li>
-                            <li>Combined 3 chatbots into single UI using ML/NLP classification, reducing user effort by 40%</li>
-                            <li>Followed CI/CD practices using Kubernetes, Docker, and Git for version control</li>
-                            <li>Top 10 in IBM CIO hackathon for voice-layered text bot solution</li>
-                        </ul>
+                <div class="experience-card" data-modal="ibm">
+                    <div class="company-logo ibm-logo">
+                        <svg viewBox="0 0 100 40" style="width: 50px; height: 20px;">
+                            <text x="0" y="30" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="32">IBM</text>
+                        </svg>
                     </div>
+                    <h3>Software Developer</h3>
+                    <p class="company-name">IBM</p>
+                    <p class="duration">Aug 2022 - June 2024</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                    <p class="brief-desc">Engineered chatbot platforms using Django, LLMs, and RAG, reducing user effort by 60%.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
                 <!-- IBM Intern -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Software Developer Intern</h3>
-                            <span class="company">IBM CIO</span>
-                            <span class="duration">Jan 2022 - July 2022</span>
-                            <span class="location">Bengaluru, India</span>
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Built interactive stock market dashboard using NLP/ML algorithms (LDA, Word2Vec, BERT, VADER, T5)</li>
-                            <li>Reduced user effort by 60% through sentiment analysis, word clouds, and news integration from social media platforms</li>
-                        </ul>
+                <div class="experience-card" data-modal="ibm-intern">
+                    <div class="company-logo ibm-logo">
+                        <svg viewBox="0 0 100 40" style="width: 50px; height: 20px;">
+                            <text x="0" y="30" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="32">IBM</text>
+                        </svg>
                     </div>
+                    <h3>Software Developer Intern</h3>
+                    <p class="company-name">IBM</p>
+                    <p class="duration">Jan 2022 - July 2022</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+                    <p class="brief-desc">Built interactive stock market dashboard using NLP/ML algorithms.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
                 <!-- SSN Research -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Research Assistant</h3>
-                            <span class="company">SSN College of Engineering</span>
-                            <span class="duration">June 2021 - July 2022</span>
-                            <span class="location">Chennai, India</span>
-                        </div>
-                        <ul class="timeline-description">
-                            <li>Developed crime network visualization tool using Social Network Analysis with NetworkX, Pyvis, and Vis.js</li>
-                            <li>Implemented pathfinding algorithms to trace connections between criminals for police investigations</li>
-                            <li>Built web application with Python backend and JavaScript frontend for dataset analysis</li>
-                        </ul>
+                <div class="experience-card" data-modal="ssn">
+                    <div class="company-logo ssn-logo">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
+                    <h3>Research Assistant</h3>
+                    <p class="company-name">SSN College of Engineering</p>
+                    <p class="duration">June 2021 - July 2022</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
+                    <p class="brief-desc">Developed crime network visualization tool using Social Network Analysis.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Experience Modals -->
+    <div id="aws-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo aws-logo">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <div>
+                    <h2>Graduate Research Extern</h2>
+                    <p class="modal-company">Amazon Web Services (AWS)</p>
+                    <p class="modal-duration">Jan 2026 - Present | Remote</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>Exploring how multi-agent reinforcement learning primitives can be embedded into single-agent RL objectives so Large Language Models acquire strategic, multi-agent reasoning during training rather than at deployment.</p>
+                
+                <h3>Key Responsibilities & Achievements</h3>
+                <ul>
+                    <li>Conducting comprehensive literature survey on existing multi-agent RL benchmarks to determine optimal fit for research use case</li>
+                    <li>Investigating novel approaches to embed multi-agent coordination and strategic reasoning directly into training objectives</li>
+                    <li>Analyzing current limitations of post-hoc multi-agent deployment strategies and proposing training-time alternatives</li>
+                    <li>Collaborating with AWS research team as part of COMPSCI 698DS course at UMass Amherst</li>
+                    <li>Developing experimental frameworks to test multi-agent reasoning capabilities in LLMs</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Reinforcement Learning</span>
+                    <span>Multi-agent Systems</span>
+                    <span>LLMs</span>
+                    <span>Python</span>
+                    <span>AWS</span>
+                    <span>Research</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="microsoft-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo microsoft-logo">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <div>
+                    <h2>Software Engineering Intern</h2>
+                    <p class="modal-company">Microsoft</p>
+                    <p class="modal-duration">May 2025 - Aug 2025 | Redmond, WA</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Self-correcting Code-adaptive DevOps Agent</h3>
+                <p>I built a self-correcting code-adaptive DevOps Agent that takes in Resource Provider (RP) specific files, generates output code, attempts to build the project, feeds build errors back to the model until errors are fixed, and finally pushes code to Azure DevOps with an automated PR.</p>
+                
+                <h3>UI Development & User Experience</h3>
+                <p>The UI was built using <strong>Streamlit</strong> for a lightweight framework as the work was LLM-heavy. The design evolved from a simple chatbot to include:</p>
+                <ul>
+                    <li>Text boxes and checkboxes to select files needed for uploading into LLM memory</li>
+                    <li>Real-time display of generated code on the UI</li>
+                    <li>Build error visualization and tracking</li>
+                    <li>Pipeline re-running interface with build error feedback</li>
+                    <li>Corrected code regeneration display</li>
+                    <li>PR creation button with final PR link display</li>
+                </ul>
+                
+                <h3>Technical Architecture & Azure Integration</h3>
+                <p>The project began with exploring Azure services and deciding to use <strong>Azure Foundry SDK</strong> to handle tools, webhooks, and integrations. While a simple RAG pipeline using the SDK worked initially, the code quality wasn't sufficient and executed with build errors. This led to implementing three major improvements:</p>
+                
+                <h3>1. Extensive Prompt Engineering</h3>
+                <ul>
+                    <li>Developed sophisticated prompt engineering strategies with few-shot examples of specific code patterns</li>
+                    <li>Helped generate the correct skeleton and structure of the code</li>
+                    <li>Significantly improved initial code generation quality</li>
+                </ul>
+                
+                <h3>2. Metadata-Based Code-Adaptive RAG Approach (Key Innovation)</h3>
+                <p><strong>Problem:</strong> Initially, single files were uploaded to the vector database and retrieved based on highest match to new RP descriptions. This caused significant information mismatches and incomplete project context.</p>
+                <p><strong>Solution:</strong> I invented a metadata-based approach to retrieve relevant projects as complete units:</p>
+                <ul>
+                    <li>Created metadata structure containing: project name, RP description and functionality, and names of all files present in the RP</li>
+                    <li>Only the description was embedded in the vector database, not individual files</li>
+                    <li>For incoming new RP requests, the new description was embedded and matched against existing RP descriptions</li>
+                    <li>Most similar RPs were retrieved as <strong>whole projects</strong> rather than individual files</li>
+                    <li>This approach made the RAG pipeline <strong>code-adaptive</strong> rather than just text-adaptive</li>
+                    <li>Significantly improved performance by maintaining project structure and context</li>
+                </ul>
+                
+                <h3>3. Self-Correcting Build Automation (Major Breakthrough)</h3>
+                <p><strong>Challenge:</strong> We were manually building projects and feeding errors back—a time-consuming and inefficient process.</p>
+                <p><strong>Innovation:</strong> Automated the entire build-fix-rebuild cycle:</p>
+                <ul>
+                    <li>Wrote a script to automatically build the project after code generation</li>
+                    <li>Captured build errors and fed them back to the LLM automatically</li>
+                    <li>Provided new instructions along with build errors to guide regeneration</li>
+                    <li>LLM regenerated the entire codebase with corrections</li>
+                    <li>Loop continued until the build was successful</li>
+                    <li><strong>Result: Improved code writing time by 75%</strong></li>
+                </ul>
+                
+                <h3>Key Impact & Results</h3>
+                <ul>
+                    <li>75% improvement in code generation accuracy and development time</li>
+                    <li>Reduced manual intervention through automated build-fix cycles</li>
+                    <li>Invented metadata-based code-adaptive RAG approach for maintaining project context</li>
+                    <li>Successfully integrated with Azure DevOps for automated PR creation</li>
+                    <li>Deployed as production-ready customer-facing application</li>
+                    <li>Followed Responsible AI protocols throughout development</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>LLMs</span>
+                    <span>RAG</span>
+                    <span>Azure Foundry SDK</span>
+                    <span>Azure DevOps</span>
+                    <span>Vector Databases</span>
+                    <span>Python</span>
+                    <span>Streamlit</span>
+                    <span>Prompt Engineering</span>
+                    <span>Build Automation</span>
+                    <span>CI/CD</span>
+                    <span>Metadata Design</span>
+                    <span>Self-Correcting Systems</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="umass-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo umass-logo">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div>
+                    <h2>Graduate Student Researcher</h2>
+                    <p class="modal-company">UMass Amherst (Cisco Collaboration)</p>
+                    <p class="modal-duration">Jan 2025 - May 2025 | Amherst, MA</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Research Focus</h3>
+                <p>Enhanced multi-document question answering system using Large Language Models by implementing a verification layer to evaluate multiple generated answers and select the most accurate response.</p>
+                
+                <h3>Key Contributions & Results</h3>
+                <ul>
+                    <li>Achieved 20% improvement in answer accuracy on complex, multi-hop questions through systematic prompt engineering</li>
+                    <li>Designed comprehensive benchmarking strategies to assess system performance, reliability, and accuracy across diverse query types</li>
+                    <li>Developed verification mechanisms to rank and select optimal answers from multiple LLM outputs</li>
+                    <li>Explored answer confidence scoring and consistency checking techniques</li>
+                    <li>Investigated failure modes of RAG systems on multi-document reasoning tasks</li>
+                    <li>Collaborated with Cisco research team as part of COMPSCI 696 coursework</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>LLMs</span>
+                    <span>RAG</span>
+                    <span>Prompt Engineering</span>
+                    <span>NLP</span>
+                    <span>Python</span>
+                    <span>Research</span>
+                    <span>Evaluation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ibm-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo ibm-logo">
+                    <svg viewBox="0 0 100 40" style="width: 50px; height: 20px;">
+                        <text x="0" y="30" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="32">IBM</text>
+                    </svg>
+                </div>
+                <div>
+                    <h2>Software Developer</h2>
+                    <p class="modal-company">IBM</p>
+                    <p class="modal-duration">Aug 2022 - June 2024 | Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Role Overview</h3>
+                <p>Engineered advanced chatbot platforms using Django, Milvus vector database, and Large Language Models with Retrieval Augmented Generation for intelligent query processing.</p>
+                
+                <h3>Key Achievements & Impact</h3>
+                <ul>
+                    <li>Reduced user effort by 60% through strategic integration of Cloud Object Storage and PostgreSQL for high-speed answer retrieval and caching</li>
+                    <li>Consolidated 3 separate chatbots into a unified UI using ML/NLP classification to intelligently route queries, reducing user effort by 40%</li>
+                    <li>Experimented with multiple LLMs (Mistral, Granite, FlanUL) optimizing for latency and generalizability</li>
+                    <li>Implemented efficient chunking strategies improving retrieval accuracy and response quality</li>
+                    <li>Developed reusable test scripts for chunking, classification, and generation evaluation</li>
+                    <li>Followed CI/CD best practices using Kubernetes, Docker, and Git for automated deployment pipelines</li>
+                    <li>Placed Top 10 in IBM CIO hackathon with voice-layered text bot capable of replacing traditional IVR systems</li>
+                    <li>Delivered comprehensive product lifecycle: planning, development, testing, production, and maintenance</li>
+                    <li>Presented seminar on "Sequence Modelling" for AI@CIO initiative</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Django</span>
+                    <span>LLMs</span>
+                    <span>RAG</span>
+                    <span>Milvus</span>
+                    <span>PostgreSQL</span>
+                    <span>Docker</span>
+                    <span>Kubernetes</span>
+                    <span>CI/CD</span>
+                    <span>Python</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ibm-intern-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo ibm-logo">
+                    <svg viewBox="0 0 100 40" style="width: 50px; height: 20px;">
+                        <text x="0" y="30" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="32">IBM</text>
+                    </svg>
+                </div>
+                <div>
+                    <h2>Software Developer Intern</h2>
+                    <p class="modal-company">IBM</p>
+                    <p class="modal-duration">Jan 2022 - July 2022 | Bengaluru, India</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Description</h3>
+                <p>Built interactive stock market dashboard enabling users with or without prior financial knowledge to gain comprehensive understanding of market dynamics and influencing factors.</p>
+                
+                <h3>Key Features & Accomplishments</h3>
+                <ul>
+                    <li>Reduced user research effort by 60% through integration of sentiment analysis, word clouds, and real-time news aggregation</li>
+                    <li>Implemented LDA (Latent Dirichlet Allocation) for topic modeling to identify trending market themes</li>
+                    <li>Utilized Word2Vec for generating word embeddings and semantic relationships in financial text</li>
+                    <li>Applied BERT for contextual understanding of news articles and social media posts</li>
+                    <li>Integrated VADER sentiment analysis for real-time market sentiment tracking</li>
+                    <li>Employed T5 transformer for text generation and summarization of financial news</li>
+                    <li>Collected and analyzed data from Twitter, Reddit, financial news sites, and social media platforms</li>
+                    <li>Built real-time data pipeline for continuous market insights updates</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Python</span>
+                    <span>NLP</span>
+                    <span>BERT</span>
+                    <span>LDA</span>
+                    <span>Word2Vec</span>
+                    <span>VADER</span>
+                    <span>T5</span>
+                    <span>Data Pipeline</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ssn-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo ssn-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h2>Research Assistant</h2>
+                    <p class="modal-company">SSN College of Engineering</p>
+                    <p class="modal-duration">June 2021 - July 2022 | Chennai, India</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Research Project</h3>
+                <p>Developed comprehensive crime network visualization tool using Social Network Analysis under the guidance of Professor Dr. Felix Enigo V S.</p>
+                
+                <h3>Technical Contributions</h3>
+                <ul>
+                    <li>Created dynamic, interactive network graphs using NetworkX for graph algorithms and analysis</li>
+                    <li>Implemented visualization layer using Pyvis for Python-based interactive graphs and Vis.js for web rendering</li>
+                    <li>Developed advanced pathfinding algorithms to trace and visualize connections between criminals</li>
+                    <li>Computed key centrality measures: degree centrality, betweenness centrality, and closeness centrality</li>
+                    <li>Implemented community detection algorithms to identify criminal groups and networks</li>
+                    <li>Built sophisticated search and filter functions for names, crimes, and locations</li>
+                    <li>Developed full-stack web application with Python backend and HTML/CSS/JavaScript frontend</li>
+                    <li>Enabled targeted investigation queries through advanced filtering capabilities</li>
+                    <li>Significantly aided police investigations through network visualization and analysis</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Python</span>
+                    <span>NetworkX</span>
+                    <span>Pyvis</span>
+                    <span>Vis.js</span>
+                    <span>Graph Theory</span>
+                    <span>Web Development</span>
+                    <span>Data Analysis</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Projects Section -->
     <section id="projects" class="section projects">
@@ -435,17 +722,32 @@
                 Feel free to reach out!
             </p>
             <div class="contact-grid">
-                <a href="/cdn-cgi/l/email-protection#f3859281809b928192859a909b929d9781929dc5b3949e929a9fdd909c9e" class="contact-card">
+                <a href="mailto:varsharavichandran6@gmail.com" class="contact-card">
                     <i class="fas fa-envelope"></i>
                     <h3>Email</h3>
-                    <p><span class="__cf_email__" data-cfemail="0d7b6c7f7e656c7f6c7b646e656c63697f6c633b4d6a606c6461236e6260">[email&#160;protected]</span></p>
+                    <p>varsharavichandran6@gmail.com</p>
                 </a>
                 <a href="tel:+13312910572" class="contact-card">
                     <i class="fas fa-phone"></i>
                     <h3>Phone</h3>
                     <p>+1 (331) 291-0572</p>
                 </a>
-                <a href="https://www.linkedin.com/in/varsharavichandran-42b7811b1" target="_blank" class="contact-card">
+                <a href="https://www.linkedin.com/in/varsha-ravichandran-42b7811b1" target="_blank" class="contact-card">
                     <i class="fab fa-linkedin"></i>
                     <h3>LinkedIn</h3>
-                    <p>Connect with me</p
+                    <p>Connect with me</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Varsha Ravichandran. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
