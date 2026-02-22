@@ -333,6 +333,10 @@ body {
     background: linear-gradient(135deg, #4CAF50, #2E7D32);
 }
 
+.cdac-logo {
+    background: linear-gradient(135deg, #1a56db, #0e3a8c);
+}
+
 .experience-card h3 {
     font-size: 1.3rem;
     color: var(--text-dark);
