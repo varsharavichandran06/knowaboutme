@@ -15,6 +15,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#industry-projects" class="nav-link">Industry Projects</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
@@ -75,19 +76,6 @@
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <div class="experience-grid">
-                
-                <!-- AWS -->
-                <div class="experience-card" data-modal="aws">
-                    <div class="company-logo aws-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="width: 55px; height: auto;">
-                    </div>
-                    <h3>Graduate Research Extern</h3>
-                    <p class="company-name">Amazon Web Services (AWS)</p>
-                    <p class="duration">Jan 2026 - Present</p>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Remote</p>
-                    <p class="brief-desc">Exploring multi-agent RL integration in LLM training objectives for strategic reasoning.</p>
-                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
-                </div>
 
                 <!-- Microsoft -->
                 <div class="experience-card" data-modal="microsoft">
@@ -99,19 +87,6 @@
                     <p class="duration">May 2025 - Aug 2025</p>
                     <p class="location"><i class="fas fa-map-marker-alt"></i> Redmond, WA</p>
                     <p class="brief-desc">Built self-correcting DevOps AI agent using LLMs, RAG, and Azure DevOps.</p>
-                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
-                </div>
-
-                <!-- UMass / Cisco -->
-                <div class="experience-card" data-modal="umass">
-                    <div class="company-logo umass-logo">
-                        <i class="fas fa-university" style="font-size: 2rem;"></i>
-                    </div>
-                    <h3>Graduate Student Researcher</h3>
-                    <p class="company-name">UMass Amherst (Cisco)</p>
-                    <p class="duration">Jan 2025 - May 2025</p>
-                    <p class="location"><i class="fas fa-map-marker-alt"></i> Amherst, MA</p>
-                    <p class="brief-desc">Enhanced RAG system with verification layer, achieving 20% accuracy improvement.</p>
                     <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
@@ -159,45 +134,6 @@
     </section>
 
     <!-- Experience Modals -->
-    <div id="aws-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <div class="company-logo aws-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="width: 55px; height: auto;">
-                </div>
-                <div>
-                    <h2>Graduate Research Extern</h2>
-                    <p class="modal-company">Amazon Web Services (AWS)</p>
-                    <p class="modal-duration">Jan 2026 - Present | Remote</p>
-                </div>
-            </div>
-            <div class="modal-body">
-                <h3>Project Overview</h3>
-                <p>Exploring how multi-agent reinforcement learning primitives can be embedded into single-agent RL objectives so Large Language Models acquire strategic, multi-agent reasoning during training rather than at deployment.</p>
-                
-                <h3>Key Responsibilities & Achievements</h3>
-                <ul>
-                    <li>Conducting comprehensive literature survey on existing multi-agent RL benchmarks to determine optimal fit for research use case</li>
-                    <li>Investigating novel approaches to embed multi-agent coordination and strategic reasoning directly into training objectives</li>
-                    <li>Analyzing current limitations of post-hoc multi-agent deployment strategies and proposing training-time alternatives</li>
-                    <li>Collaborating with AWS research team as part of COMPSCI 698DS course at UMass Amherst</li>
-                    <li>Developing experimental frameworks to test multi-agent reasoning capabilities in LLMs</li>
-                </ul>
-                
-                <h3>Technologies & Skills</h3>
-                <div class="modal-tags">
-                    <span>Reinforcement Learning</span>
-                    <span>Multi-agent Systems</span>
-                    <span>LLMs</span>
-                    <span>Python</span>
-                    <span>AWS</span>
-                    <span>Research</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="microsoft-modal" class="modal">
         <div class="modal-content">
             <button class="modal-close"><i class="fas fa-times"></i></button>
@@ -284,47 +220,6 @@
                     <span>CI/CD</span>
                     <span>Metadata Design</span>
                     <span>Self-Correcting Systems</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="umass-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close"><i class="fas fa-times"></i></button>
-            <div class="modal-header">
-                <div class="company-logo umass-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/UMass_Amherst_athletics_logo.svg" alt="UMass Amherst" style="width: 55px; height: auto;">
-                </div>
-                <div>
-                    <h2>Graduate Student Researcher</h2>
-                    <p class="modal-company">UMass Amherst (Cisco Collaboration)</p>
-                    <p class="modal-duration">Jan 2025 - May 2025 | Amherst, MA</p>
-                </div>
-            </div>
-            <div class="modal-body">
-                <h3>Research Focus</h3>
-                <p>Enhanced multi-document question answering system using Large Language Models by implementing a verification layer to evaluate multiple generated answers and select the most accurate response.</p>
-                
-                <h3>Key Contributions & Results</h3>
-                <ul>
-                    <li>Achieved 20% improvement in answer accuracy on complex, multi-hop questions through systematic prompt engineering</li>
-                    <li>Designed comprehensive benchmarking strategies to assess system performance, reliability, and accuracy across diverse query types</li>
-                    <li>Developed verification mechanisms to rank and select optimal answers from multiple LLM outputs</li>
-                    <li>Explored answer confidence scoring and consistency checking techniques</li>
-                    <li>Investigated failure modes of RAG systems on multi-document reasoning tasks</li>
-                    <li>Collaborated with Cisco research team as part of COMPSCI 696 coursework</li>
-                </ul>
-                
-                <h3>Technologies & Skills</h3>
-                <div class="modal-tags">
-                    <span>LLMs</span>
-                    <span>RAG</span>
-                    <span>Prompt Engineering</span>
-                    <span>NLP</span>
-                    <span>Python</span>
-                    <span>Research</span>
-                    <span>Evaluation</span>
                 </div>
             </div>
         </div>
@@ -464,6 +359,123 @@
         </div>
     </div>
 
+    <!-- Industry Projects Section -->
+    <section id="industry-projects" class="section experience">
+        <div class="container">
+            <h2 class="section-title">Industry Projects</h2>
+            <div class="experience-grid">
+
+                <!-- AWS -->
+                <div class="experience-card" data-modal="aws">
+                    <div class="company-logo aws-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="width: 55px; height: auto;">
+                    </div>
+                    <h3>Multi-Agent RL for LLMs</h3>
+                    <p class="company-name">Amazon Web Services (AWS)</p>
+                    <p class="duration">Jan 2026 - Present</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Remote | Graduate Research Extern</p>
+                    <p class="brief-desc">Exploring multi-agent RL integration in LLM training objectives for strategic reasoning.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <!-- UMass / Cisco -->
+                <div class="experience-card" data-modal="umass">
+                    <div class="company-logo umass-logo">
+                        <i class="fas fa-university" style="font-size: 2rem;"></i>
+                    </div>
+                    <h3>Multi-Document QA Verification</h3>
+                    <p class="company-name">UMass Amherst (Cisco)</p>
+                    <p class="duration">Jan 2025 - May 2025</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Amherst, MA | Graduate Student Researcher</p>
+                    <p class="brief-desc">Enhanced RAG system with verification layer, achieving 20% accuracy improvement.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Projects Modals -->
+    <div id="aws-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo aws-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="width: 55px; height: auto;">
+                </div>
+                <div>
+                    <h2>Multi-Agent RL for LLMs</h2>
+                    <p class="modal-company">Amazon Web Services (AWS)</p>
+                    <p class="modal-duration">Jan 2026 - Present | Remote | Graduate Research Extern</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>Exploring how single-agent reinforcement learning primitives can be embedded into multi-agent RL objectives so Large Language Models acquire strategic, multi-agent reasoning during training rather than at deployment.</p>
+                
+                <h3>Key Responsibilities & Achievements</h3>
+                <ul>
+                    <li>Conducting comprehensive literature survey on existing single-agent RL benchmarks to determine optimal fit for research use case</li>
+                    <li>Investigating novel approaches to embed multi-agent coordination and strategic reasoning directly into training objectives</li>
+                    <li>Analyzing current limitations of post-hoc multi-agent deployment strategies and proposing training-time alternatives</li>
+                    <li>Collaborating with AWS research team as part of COMPSCI 698DS course at UMass Amherst</li>
+                    <li>Developing experimental frameworks to test multi-agent reasoning capabilities in LLMs</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Reinforcement Learning</span>
+                    <span>Multi-agent Systems</span>
+                    <span>LLMs</span>
+                    <span>Python</span>
+                    <span>AWS</span>
+                    <span>Research</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="umass-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo umass-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/UMass_Amherst_athletics_logo.svg" alt="UMass Amherst" style="width: 55px; height: auto;">
+                </div>
+                <div>
+                    <h2>Multi-Document QA Verification</h2>
+                    <p class="modal-company">UMass Amherst (Cisco Collaboration)</p>
+                    <p class="modal-duration">Jan 2025 - May 2025 | Amherst, MA | Graduate Student Researcher</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Research Focus</h3>
+                <p>Enhanced multi-document question answering system using Large Language Models by implementing a verification layer to evaluate multiple generated answers and select the most accurate response.</p>
+                
+                <h3>Key Contributions & Results</h3>
+                <ul>
+                    <li>Achieved 20% improvement in answer accuracy on complex, multi-hop questions through systematic prompt engineering</li>
+                    <li>Designed comprehensive benchmarking strategies to assess system performance, reliability, and accuracy across diverse query types</li>
+                    <li>Developed verification mechanisms to rank and select optimal answers from multiple LLM outputs</li>
+                    <li>Explored answer confidence scoring and consistency checking techniques</li>
+                    <li>Investigated failure modes of RAG systems on multi-document reasoning tasks</li>
+                    <li>Collaborated with Cisco research team as part of COMPSCI 696 coursework</li>
+                </ul>
+                
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>LLMs</span>
+                    <span>RAG</span>
+                    <span>Prompt Engineering</span>
+                    <span>NLP</span>
+                    <span>Python</span>
+                    <span>Research</span>
+                    <span>Evaluation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
@@ -486,34 +498,6 @@
                     <a href="https://github.com/varsharavichandran06/github_agent" target="_blank" class="project-link">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Multi-Agent RL for LLMs</h3>
-                    <p class="project-company">AWS</p>
-                    <p>Exploring how multi-agent RL primitives can be embedded into single-agent RL objectives so LLMs acquire strategic, multi-agent reasoning during training rather than at deployment.</p>
-                    <div class="project-tags">
-                        <span class="tag">Reinforcement Learning</span>
-                        <span class="tag">LLMs</span>
-                        <span class="tag">AWS</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Multi-Document QA Verification</h3>
-                    <p class="project-company">Cisco</p>
-                    <p>Enhanced RAG system reliability with verification layer to evaluate multiple generated answers. Achieved 20% improvement in accuracy through prompt engineering on complex multi-hop questions.</p>
-                    <div class="project-tags">
-                        <span class="tag">RAG</span>
-                        <span class="tag">LLMs</span>
-                        <span class="tag">Prompt Engineering</span>
-                    </div>
                 </div>
 
                 <div class="project-card">
