@@ -171,3 +171,82 @@ if (footerYear) {
     const currentYear = new Date().getFullYear();
     footerYear.textContent = `© ${currentYear} Varsha Ravichandran. All rights reserved.`;
 }
+
+/* Chat widget frontend */
+const chatToggle = document.getElementById('chatToggle');
+const chatWindow = document.getElementById('chatWindow');
+const chatClose = document.getElementById('chatClose');
+const chatMessages = document.getElementById('chatMessages');
+const sendQuestion = document.getElementById('sendQuestion');
+const questionInput = document.getElementById('questionInput');
+
+let greeted = false;
+let conversationHistory = [];
+
+function addMessage(text, who='bot'){
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + (who === 'user' ? 'user' : 'bot');
+    div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+chatToggle?.addEventListener('click', () => {
+    chatWindow.classList.toggle('active');
+    const isActive = chatWindow.classList.contains('active');
+    chatWindow.setAttribute('aria-hidden', !isActive);
+    // initial greeting when first opened
+    if (isActive && !greeted) {
+        setTimeout(() => addMessage("Hi, this is Varsha. I'm happy to answer any questions about me!", 'bot'), 200);
+        greeted = true;
+    }
+});
+
+chatClose?.addEventListener('click', () => {
+    chatWindow.classList.remove('active');
+    chatWindow.setAttribute('aria-hidden', 'true');
+});
+
+async function askQuestion(){
+    const q = questionInput.value.trim();
+    if (!q) return;
+    addMessage(q, 'user');
+    conversationHistory.push({ role: 'user', content: q });
+    questionInput.value = '';
+    addMessage('Thinking...', 'bot');
+
+    try {
+        const res = await fetch('/api/ask', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: conversationHistory })
+        });
+        const data = await res.json();
+        // remove the 'Thinking...' placeholder
+        const last = chatMessages.querySelector('.chat-msg.bot:last-child');
+        if (last && last.textContent === 'Thinking...') last.remove();
+        if (res.ok) {
+            addMessage(data.answer || 'No answer returned', 'bot');
+            conversationHistory.push({ role: 'assistant', content: data.answer || '' });
+        } else {
+            addMessage(data.error || 'Error from server', 'bot');
+            conversationHistory.pop(); // drop the unanswered question so retries stay clean
+        }
+    } catch (err) {
+        console.error(err);
+        const last = chatMessages.querySelector('.chat-msg.bot:last-child');
+        if (last && last.textContent === 'Thinking...') last.remove();
+        addMessage('Failed to get answer (network).', 'bot');
+        conversationHistory.pop();
+    }
+}
+
+sendQuestion?.addEventListener('click', askQuestion);
+
+// allow Enter to send
+questionInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        askQuestion();
+    }
+});
