@@ -172,7 +172,7 @@ if (footerYear) {
     footerYear.textContent = `© ${currentYear} Varsha Ravichandran. All rights reserved.`;
 }
 
-/* Chat widget frontend */
+/* Chat widget frontend (disabled for now — backend not deployed)
 const chatToggle = document.getElementById('chatToggle');
 const chatWindow = document.getElementById('chatWindow');
 const chatClose = document.getElementById('chatClose');
@@ -250,3 +250,4 @@ questionInput?.addEventListener('keydown', (e) => {
         askQuestion();
     }
 });
+*/
