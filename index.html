@@ -813,6 +813,33 @@
                     <p>Connect with me</p>
                 </a>
             </div>
+
+            <div class="contact-form-wrapper">
+                <h3 class="contact-form-title">Or send me a message directly</h3>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" required maxlength="100" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactReply">Your email or LinkedIn profile URL</label>
+                            <input type="text" id="contactReply" required maxlength="200" placeholder="you@example.com or linkedin.com/in/you">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" required maxlength="5000" rows="5" placeholder="What would you like to say?"></textarea>
+                    </div>
+                    <!-- Honeypot field — hidden from real visitors, catches simple bots -->
+                    <div class="contact-honeypot" aria-hidden="true">
+                        <label for="contactWebsite">Leave this field blank</label>
+                        <input type="text" id="contactWebsite" tabindex="-1" autocomplete="off">
+                    </div>
+                    <button type="submit" id="contactSubmit" class="contact-submit">Send Message</button>
+                    <p id="contactStatus" class="contact-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
         </div>
     </section>
 

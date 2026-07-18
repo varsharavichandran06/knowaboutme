@@ -1,14 +1,12 @@
-# Portfolio chat assistant (Claude-powered)
+# Portfolio backend (Claude chat assistant)
 
-A minimal Node/Express server that answers visitor questions about Varsha using Claude (Opus 4.8). It builds its knowledge from:
+A minimal Node/Express server behind the portfolio site. It powers the **chat assistant** (currently disabled in `index.html`/`script.js`) — answers visitor questions about Varsha using Claude (Opus 4.8), built from `Varsha_Ravichandran.pdf`, `index.html`, and her LinkedIn URL.
 
-- `Varsha_Ravichandran.pdf` (resume, parsed automatically at startup)
-- `index.html` (the portfolio page itself)
-- Varsha's LinkedIn profile URL (hardcoded in `server.js` — LinkedIn blocks scraping, so only the link is included, not the profile content)
+Running this server requires it to be deployed and kept running somewhere (Render, Railway, Fly.io, etc.) — it does **not** run on GitHub Pages, which only serves static files. It's optional; the rest of the site works without it.
 
-The assistant is guardrailed to only answer questions about Varsha's background, skills, projects, and experience, and politely declines anything off-topic.
+The **contact form** does not use this backend at all — it's an embedded Google Form, so it works on a purely static GitHub Pages deployment. See `## Contact form setup` below.
 
-## Setup
+## Setup (chat assistant only)
 
 1. Add your Anthropic API key to `.env`:
 
@@ -26,11 +24,26 @@ npm start
 npm run dev
 ```
 
-## Usage
+3. Open `http://localhost:3000` in your browser.
 
-- Open `http://localhost:3000` in your browser.
-- Click the chat icon in the bottom-right corner and ask a question.
+## Contact form setup (no server required, free & unlimited)
+
+The contact section embeds a real Google Form via `<iframe>` (see `index.html`, inside `.contact-form-wrapper`). Google handles hosting, spam filtering, submission storage, and (once you turn it on) emailing you — no code on your side beyond the embed URL.
+
+1. Go to [forms.google.com](https://forms.google.com) and create a new form. Add fields matching what the site previously asked for:
+   - **Name** (short answer, required)
+   - **Title / Subject** (short answer, required)
+   - **Message** (paragraph, required)
+   - **Your email or LinkedIn profile URL** (short answer, required)
+2. Turn on email notifications: in the **Responses** tab, click the three-dot menu → **Get email notifications for new responses**. Now every submission lands in your inbox automatically.
+3. Click **Send** (top right) → the `<>` (embed HTML) icon. Copy the `src` URL from the `<iframe>` snippet it gives you — it looks like `https://docs.google.com/forms/d/e/1FAIpQLS.../viewform?embedded=true`.
+4. In `index.html`, find the `<iframe>` inside `.google-form-embed` and replace `YOUR_GOOGLE_FORM_ID` in the `src` attribute with your real form's ID (the long string between `/d/e/` and `/viewform`), or just paste the whole `src` URL Google gave you.
+5. Google's embed height depends on how many fields your form has — if the form gets cut off or leaves extra blank space, adjust the `height="800"` attribute on the `<iframe>` up or down.
+
+That's it — no environment variables, no server, works as-is on GitHub Pages, and Google Forms has no submission cap on the free tier.
+
+**One UX difference from the old email-based form:** Google's notification email comes from Google Forms itself, not from the visitor — there's no automatic "Reply-To" like Formspree offered. To respond, open the notification email (or the Google Form's Responses sheet), copy the "Your email or LinkedIn profile URL" the visitor gave, and reach out manually.
 
 ## Notes & security
 
-- This is a minimal demo; consider rate-limiting and input validation before deploying publicly.
+- The chat assistant backend is optional and only needed if you re-enable the chat widget and deploy `server.js` somewhere with Node support.

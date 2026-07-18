@@ -251,3 +251,86 @@ questionInput?.addEventListener('keydown', (e) => {
     }
 });
 */
+
+/* Contact form — custom-styled inputs, submitted directly to Google Forms
+   behind the scenes (no visible Google UI, no backend server).
+
+   Entry IDs and the target URL were extracted from the live form's HTML —
+   if you add, remove, or reorder questions in the Google Form, these will
+   go stale and need to be re-extracted. */
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSek85N4f0PbgGF_acNbpFLY7nyfcO8QK-0QAkmWnrY_2Z-Rlg/formResponse';
+const GOOGLE_FORM_ENTRIES = {
+    name: 'entry.1620060508',
+    message: 'entry.1373501715',
+    replyTo: 'entry.1857205363',
+};
+
+const contactForm = document.getElementById('contactForm');
+const contactSubmit = document.getElementById('contactSubmit');
+const contactStatus = document.getElementById('contactStatus');
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const LINKEDIN_RE = /^(https?:\/\/)?([\w-]+\.)?linkedin\.com\/.+/i;
+
+contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('contactName').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    const replyTo = document.getElementById('contactReply').value.trim();
+    const gotcha = document.getElementById('contactWebsite').value.trim(); // honeypot
+
+    if (gotcha) {
+        // Bot filled the hidden field — pretend success, don't actually send.
+        contactStatus.textContent = "Message sent! I'll get back to you soon.";
+        contactStatus.className = 'contact-status success';
+        contactForm.reset();
+        return;
+    }
+
+    if (!name || !message || !replyTo) {
+        contactStatus.textContent = 'Please fill in all fields.';
+        contactStatus.className = 'contact-status error';
+        return;
+    }
+
+    if (!EMAIL_RE.test(replyTo) && !LINKEDIN_RE.test(replyTo)) {
+        contactStatus.textContent = 'Please enter a valid email address or LinkedIn profile URL.';
+        contactStatus.className = 'contact-status error';
+        return;
+    }
+
+    contactSubmit.disabled = true;
+    contactSubmit.textContent = 'Sending...';
+    contactStatus.textContent = '';
+    contactStatus.className = 'contact-status';
+
+    const body = new URLSearchParams({
+        [GOOGLE_FORM_ENTRIES.name]: name,
+        [GOOGLE_FORM_ENTRIES.message]: message,
+        [GOOGLE_FORM_ENTRIES.replyTo]: replyTo,
+    });
+
+    try {
+        // Google Forms doesn't send CORS headers, so the browser blocks us from
+        // reading the response. 'no-cors' lets the POST go through anyway; we just
+        // can't confirm success from the response itself — only that it didn't
+        // fail at the network level (offline, DNS, etc).
+        await fetch(GOOGLE_FORM_ACTION, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body,
+        });
+        contactStatus.textContent = "Message sent! I'll get back to you soon.";
+        contactStatus.className = 'contact-status success';
+        contactForm.reset();
+    } catch (err) {
+        console.error(err);
+        contactStatus.textContent = 'Failed to send message (network error).';
+        contactStatus.className = 'contact-status error';
+    } finally {
+        contactSubmit.disabled = false;
+        contactSubmit.textContent = 'Send Message';
+    }
+});
