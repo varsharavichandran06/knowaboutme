@@ -197,7 +197,7 @@
                 </ul>
                 
                 <h3>3. Self-Correcting Build Automation (Major Breakthrough)</h3>
-                <p><strong>Challenge:</strong> We were manually building projects and feeding errors back—a time-consuming and inefficient process.</p>
+                <p><strong>Challenge:</strong> We were manually building projects and feeding errors back, a time-consuming and inefficient process.</p>
                 <p><strong>Innovation:</strong> Automated the entire build-fix-rebuild cycle:</p>
                 <ul>
                     <li>Wrote a script to automatically build the project after code generation</li>
@@ -535,90 +535,347 @@
 
                 <div class="projects-grid">
 
-                    <div class="project-card">
-                        <a href="https://youtu.be/m66irfW4M8I" target="_blank" class="project-video-wrapper">
-                            <img src="https://img.youtube.com/vi/m66irfW4M8I/hqdefault.jpg" alt="AgentOS Demo Video" class="project-video-thumb">
+                    <div class="project-card" data-modal="agentos">
+                        <div class="project-video-wrapper">
+                            <img src="https://img.youtube.com/vi/m66irfW4M8I/hqdefault.jpg" alt="AgentOS demo thumbnail" class="project-video-thumb">
                             <div class="project-video-play"><i class="fas fa-play"></i></div>
-                        </a>
+                        </div>
                         <h3>AgentOS: An Ambient AI Agent for Career & Wellbeing</h3>
-                        <p>A multi-agent concierge that quietly protects your health and time during a demanding job search, syncing your calendar, defending wellness blocks (focus time, meals, workouts) from being cannibalized by interviews, triaging your inbox, and using Gemini to reason about where a bumped task should go next rather than relying on a hardcoded heuristic. Built as a production-grade multi-agent system with a custom ADK-style runtime, AES-256-GCM encryption at rest, Firestore-backed OAuth sessions, and a full CI/CD pipeline deploying to Google Cloud Run.</p>
-                        <div class="project-tags">
-                            <span class="tag">Multi-Agent Systems</span>
-                            <span class="tag">Google ADK</span>
-                            <span class="tag">Gemini</span>
-                            <span class="tag">Node.js / Express</span>
-                            <span class="tag">React</span>
-                            <span class="tag">Firestore</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Google Cloud Run</span>
-                            <span class="tag">CI/CD</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://agentos-app-317546564195.us-central1.run.app" target="_blank" class="project-link">
-                                <i class="fas fa-play-circle"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/varsharavichandran06/AgentOS" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                            <a href="https://youtu.be/m66irfW4M8I" target="_blank" class="project-link">
-                                <i class="fab fa-youtube"></i> Watch Demo Video
-                            </a>
-                        </div>
+                        <p class="brief-desc">A multi-agent assistant that guards your calendar and your sanity while you job hunt.</p>
+                        <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                     </div>
 
-                    <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-code"></i>
+                    <div class="project-card" data-modal="fleettriage">
+                        <div class="project-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Fleet Triage: GPU Cluster Failure Diagnosis</h3>
+                        <p class="brief-desc">Tells you whether a dead GPU node is a known issue, a new bug, or just bad luck, and whether to pull it from the fleet.</p>
+                        <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                     </div>
-                    <h3>GHLens - Natural Language GitHub Explorer</h3>
-                    <p>A Streamlit-based AI agent that lets you query any GitHub repositories in plain English, to fetch live data and LLM to interpret and summarize it.</p>
-                    <div class="project-tags">
-                        <span class="tag">Streamlit</span>
-                        <span class="tag">MCP</span>
-                        <span class="tag">Agno</span>
-                        <span class="tag">Python</span>
-                    </div>
-                    <a href="https://github.com/varsharavichandran06/github_agent" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
 
-                <div class="project-card">
+                    <div class="project-card" data-modal="ghlens">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>GHLens: Natural Language GitHub Explorer</h3>
+                        <p class="brief-desc">Ask any GitHub repo a question in plain English and get a real answer back.</p>
+                        <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                <div class="project-card" data-modal="drone">
                     <div class="project-icon">
                         <i class="fas fa-drone"></i>
                     </div>
                     <h3>Dynamic Route Optimization for Drones</h3>
-                    <p>Real-time drone delivery route optimization using Kafka for streaming, Flink for data processing, and Map APIs for route visualization.</p>
-                    <div class="project-tags">
-                        <span class="tag">Kafka</span>
-                        <span class="tag">Flink</span>
-                        <span class="tag">Real-time Systems</span>
-                    </div>
-                    <a href="https://github.com/athulya-anil/drone-route-optimization" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
+                    <p class="brief-desc">Drone delivery routes that react and reroute the moment conditions on the ground change.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-modal="cs220bot">
                     <div class="project-icon">
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>CS220-bot VS Code Extension</h3>
-                    <p>Built VS Code extension that highlights code errors in real-time (cyclic imports, deep nesting, duplicate code). Uses LangChain with OpenAI APIs to generate sarcastic in-line comments.</p>
-                    <div class="project-tags">
-                        <span class="tag">LangChain</span>
-                        <span class="tag">OpenAI</span>
-                        <span class="tag">VS Code</span>
-                    </div>
+                    <p class="brief-desc">A VS Code extension that catches messy code in real time and roasts you for it.</p>
+                    <button class="expand-btn">View Details <i class="fas fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="agentos-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo" style="background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));">
+                    <i class="fas fa-robot" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h2>AgentOS: An Ambient AI Agent for Career & Wellbeing</h2>
+                    <p class="modal-company">Personal Project</p>
+                    <p class="modal-duration">Multi-Agent System | Google ADK, Gemini, Google Cloud Run</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>The Problem</h3>
+                <p>A serious job search has a way of quietly eating everything else in your life. Interviews get scheduled over lunch, focus time disappears the moment a recruiter calls, and your inbox turns into a second job. I built AgentOS to sit in the background and actually protect the parts of my day a calendar app alone won't defend.</p>
+
+                <h3>What It Does</h3>
+                <ul>
+                    <li>Watches your calendar and keeps wellness blocks (focus time, meals, workouts) from being quietly cannibalized by interview requests</li>
+                    <li>Triages your inbox so the threads that actually matter surface first</li>
+                    <li>Uses Gemini to reason about where a bumped task should go next, instead of falling back on a rigid, hardcoded rule</li>
+                </ul>
+
+                <h3>Why Multi-Agent</h3>
+                <p>Calendar logic, inbox triage, and rescheduling all need different context and different guardrails, so cramming it all into one prompt gets messy fast. AgentOS splits the problem across a set of cooperating agents, each responsible for one slice of it, coordinated through a custom ADK-style runtime rather than one do-everything model call.</p>
+
+                <h3>Built Like Production Software</h3>
+                <p>Since it touches a real calendar and a real inbox, it's engineered accordingly, not thrown together as a demo:</p>
+                <ul>
+                    <li>OAuth sessions backed by Firestore, so a login actually persists</li>
+                    <li>AES-256-GCM encryption at rest for anything sensitive it stores</li>
+                    <li>A full CI/CD pipeline that redeploys to Google Cloud Run on every change</li>
+                    <li>A React front end talking to a Node.js/Express backend over a clean API boundary</li>
+                </ul>
+
+                <h3>Tech Stack</h3>
+                <div class="modal-tags">
+                    <span>Multi-Agent Systems</span>
+                    <span>Google ADK</span>
+                    <span>Gemini</span>
+                    <span>Node.js / Express</span>
+                    <span>React</span>
+                    <span>Firestore</span>
+                    <span>Docker</span>
+                    <span>Google Cloud Run</span>
+                    <span>CI/CD</span>
+                </div>
+
+                <div class="project-links" style="margin-top: 1.5rem;">
+                    <a href="https://agentos-app-317546564195.us-central1.run.app" target="_blank" class="project-link">
+                        <i class="fas fa-play-circle"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/varsharavichandran06/AgentOS" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="https://youtu.be/m66irfW4M8I" target="_blank" class="project-link">
+                        <i class="fab fa-youtube"></i> Watch Demo Video
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fleettriage-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo" style="background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));">
+                    <i class="fas fa-server" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h2>Fleet Triage: GPU Cluster Failure Diagnosis</h2>
+                    <p class="modal-company">Personal Project</p>
+                    <p class="modal-duration">RAG + Knowledge Graph Pipeline | FastAPI, Next.js, Neo4j, AWS</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p>An evidence-backed triage agent for GPU training clusters. It tells engineers what failed, why it failed, and whether to pull the node.</p>
+
+                <h3>Measured Impact</h3>
+                <ul>
+                    <li><strong>95.8% verdict accuracy</strong>, up from 0% without evidence</li>
+                    <li><strong>100% drain-decision accuracy</strong>, up from 70.8%</li>
+                    <li><strong>110x lower cost</strong> per decision</li>
+                    <li><strong>13x faster decisions</strong>, about 4s down to about 300ms</li>
+                </ul>
+
+                <h3>The Problem</h3>
+                <p>At fleet scale, GPU failures happen all the time. Meta reported about one GPU-related interruption every three hours while training Llama 3 405B on 16,384 GPUs. Each failure forces a fast call: is this a documented known issue? Is it a new failure worth escalating, a bug in the workload, or just an artifact of the test setup?</p>
+                <p>Get it wrong and you either drain a healthy node for nothing or leave a bad one burning compute. Fleet Triage takes a failure report and returns a typed, evidence-backed answer instead of a guess.</p>
+
+                <h3>The Pipeline</h3>
+                <p>Every triage runs through four stages. Each one checkpoints before the next starts, so an interrupted run picks up where it stopped instead of starting over.</p>
+                <ul>
+                    <li><strong>Retrieval:</strong> dense vector search and BM25 run side by side, their results fused by rank and then reranked by a cross encoder</li>
+                    <li><strong>Graph:</strong> entities from the report are matched in a Neo4j knowledge graph and walked out two hops</li>
+                    <li><strong>Decision:</strong> Jev returns a typed verdict, a probability that the node should be drained, and a severity score</li>
+                    <li><strong>Synthesis:</strong> a plain-English explanation is written using only the evidence gathered above</li>
+                </ul>
+
+                <h3>Two Search Methods, One Ranked List</h3>
+                <p>Vector search catches meaning. BM25 catches exact terms like error codes and driver versions. Fleet Triage runs both and merges them with Reciprocal Rank Fusion.</p>
+                <p>It fuses by rank, not by score, because the two scores sit on different scales. Forcing them onto one range would push the weaker signal to zero, and a real match would then look the same as no match at all.</p>
+
+                <h3>Cross Encoder Reranking</h3>
+                <p>Fusion gives a strong shortlist. The cross encoder makes the final call: it reads the failure report and each candidate together, so it judges how relevant they really are to each other, not just how similar they look.</p>
+                <p>Its scores mean the same thing across every query, so the relevance threshold lives here. When nothing relevant exists, the system returns no context rather than falling back on the least-bad chunks. The final set also keeps one chunk per source document, so one long writeup can't crowd out everything else.</p>
+
+                <h3>Graph Retrieval</h3>
+                <p>Search finds similar incidents. The graph finds connected facts. Triples are pulled from every document and merged into Neo4j on entity name.</p>
+                <p>Generic words like "node" would turn into hubs linking hundreds of unrelated records, so entities above a degree cap, plus a blocklist of generic nouns, are left out of both matching and traversal. This keeps every hop meaningful.</p>
+
+                <h3>From Error Code to Resolution</h3>
+                <p>Two hops is enough for an error code to reach the component it affects and the fix on record for it:</p>
+                <p style="font-family: monospace; color: var(--text-light);">out of bounds access &rarr; custom kernel &rarr; xid 13<br>xid 48 &rarr; double bit ECC error &rarr; RMA</p>
+                <p>The decision stage gets both views together, ranked incident evidence from retrieval and linked facts from the graph, so the verdict knows what happened before and also what to do about it.</p>
+
+                <h3>Structured Decisions with Jev</h3>
+                <p>The verdict is not free text. It comes from Jev, a typed decision model, through OpenRouter.</p>
+                <ul>
+                    <li><strong>Structured:</strong> the verdict is a fixed choice (known issue, new issue, user code, or test artifact), the drain decision is a real probability, and severity follows an ordered rubric. There is no prose to parse and no broken JSON to catch downstream</li>
+                    <li><strong>Grounded:</strong> Jev only sees the evidence and graph facts gathered for this run, which is why accuracy climbs from 0% to 95.8% once evidence is added</li>
+                    <li><strong>Fast:</strong> a decision takes about 300ms, compared with about 4s through a general-purpose chat model</li>
+                    <li><strong>Cheap:</strong> it's billed per classification, not per token generated, which makes it about 110x cheaper, and that matters when failures come in by the thousands</li>
+                </ul>
+                <p>The decision runs before synthesis, since it doesn't need the model that writes the explanation. If no Jev key is set, a chat model with a checked JSON contract takes over.</p>
+
+                <h3>Results</h3>
+                <ul>
+                    <li><strong>Verdict accuracy:</strong> 0% to 95.8% once retrieval and graph evidence are added</li>
+                    <li><strong>Drain accuracy:</strong> 70.8% to 100%, so no healthy node gets pulled and no failing one stays in service</li>
+                    <li><strong>Cost and speed:</strong> 110x cheaper and 13x faster than routing the same decision through a general-purpose chat model</li>
+                    <li><strong>Infrastructure:</strong> profiling showed the graph database was allocated 780MB but held only 65MB of data, so moving to managed AuraDB avoided a compute upgrade that wasn't needed</li>
+                </ul>
+
+                <h3>Built for Operations</h3>
+                <ul>
+                    <li>A full audit trail for every run, so any decision can be traced after the fact</li>
+                    <li>Live streaming of each stage as it finishes, so engineers see evidence before the verdict lands</li>
+                    <li>Runs resume from their last checkpoint</li>
+                    <li>If the model can't be reached, the API returns an error instead of a made-up answer</li>
+                </ul>
+
+                <h3>Hard Cases It Has to Call</h3>
+                <p>The system is tested on the failures that trip up engineers the most:</p>
+                <ul>
+                    <li>Xid 13 and Xid 31 errors look like hardware faults but come from the workload</li>
+                    <li>Xid 43 could be a long-running kernel or a device that stopped responding</li>
+                    <li>NCCL timeouts look the same whether the cause is a fabric fault or one slow rank</li>
+                    <li>Host out-of-memory kills the job with no GPU error at all</li>
+                </ul>
+
+                <h3>Deployment & Security</h3>
+                <ul>
+                    <li>The backend runs on EC2 and can only be reached through CloudFront, with a custom origin header checked on every request</li>
+                    <li>There is no SSH key and no open management port, access goes through SSM Session Manager and is authenticated by IAM</li>
+                    <li>The knowledge graph runs on Neo4j AuraDB instead of a self-hosted container</li>
+                    <li>The frontend is served from S3 through its own CloudFront distribution, separate from the API</li>
+                    <li>A daily run cap, a per-caller rate limit, and a query length limit protect the public endpoint</li>
+                    <li>Every push to main builds the image, pushes it to ECR, and redeploys over SSM, all through GitHub OIDC rather than a stored AWS key</li>
+                </ul>
+
+                <h3>Tech Stack</h3>
+                <div class="modal-tags">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>Jev</span>
+                    <span>OpenRouter</span>
+                    <span>Chroma</span>
+                    <span>BM25</span>
+                    <span>Cross Encoder</span>
+                    <span>Neo4j AuraDB</span>
+                    <span>Next.js</span>
+                    <span>Docker</span>
+                    <span>AWS (EC2, CloudFront, S3, ECR, SSM)</span>
+                    <span>GitHub Actions</span>
+                </div>
+
+                <div class="project-links" style="margin-top: 1.5rem;">
+                    <a href="https://d2g92amvr8fh0b.cloudfront.net" target="_blank" class="project-link">
+                        <i class="fas fa-play-circle"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/varsharavichandran06/fleet-triage" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ghlens-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo" style="background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));">
+                    <i class="fas fa-code" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h2>GHLens: Natural Language GitHub Explorer</h2>
+                    <p class="modal-company">Personal Project</p>
+                    <p class="modal-duration">Streamlit + MCP</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>Digging through an unfamiliar repo to answer a simple question gets old fast. GHLens is a Streamlit app that lets you just ask, in plain English, and get a real answer instead of clicking through folders. It fetches live repo data through MCP and Agno, then hands it to an LLM to read and summarize.</p>
+
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Streamlit</span>
+                    <span>MCP</span>
+                    <span>Agno</span>
+                    <span>Python</span>
+                </div>
+
+                <div class="project-links" style="margin-top: 1.5rem;">
+                    <a href="https://github.com/varsharavichandran06/github_agent" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="drone-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo" style="background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));">
+                    <i class="fas fa-drone" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h2>Dynamic Route Optimization for Drones</h2>
+                    <p class="modal-company">Personal Project</p>
+                    <p class="modal-duration">Kafka + Flink Streaming Pipeline</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>A drone delivery route is only as good as the moment it was planned in. This project streams live conditions through Kafka, processes them with Flink, and recomputes delivery routes on the fly rather than locking them in upfront, then plots the results over Map APIs so you can watch the route adjust in real time.</p>
+
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>Kafka</span>
+                    <span>Flink</span>
+                    <span>Real-time Systems</span>
+                </div>
+
+                <div class="project-links" style="margin-top: 1.5rem;">
+                    <a href="https://github.com/athulya-anil/drone-route-optimization" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cs220bot-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="company-logo" style="background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));">
+                    <i class="fas fa-code" style="font-size: 2rem; color: white;"></i>
+                </div>
+                <div>
+                    <h2>CS220-bot VS Code Extension</h2>
+                    <p class="modal-company">Personal Project</p>
+                    <p class="modal-duration">LangChain + OpenAI</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>A VS Code extension that flags code smells in real time, cyclic imports, deep nesting, duplicate code, the stuff that quietly makes a codebase harder to work in. Instead of a plain lint warning, it uses LangChain with OpenAI's APIs to leave a sarcastic inline comment about what it found, so you actually notice and fix it.</p>
+
+                <h3>Technologies & Skills</h3>
+                <div class="modal-tags">
+                    <span>LangChain</span>
+                    <span>OpenAI</span>
+                    <span>VS Code</span>
+                </div>
+
+                <div class="project-links" style="margin-top: 1.5rem;">
                     <a href="https://github.com/PranavReddyP16/Spaghetti-Sniffer" target="_blank" class="project-link">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
-
-                
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Skills Section -->
     <section id="skills" class="section skills">
@@ -628,87 +885,97 @@
                 <div class="skill-category">
                     <h3><i class="fas fa-robot"></i> AI/ML Specializations</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Generative AI</span>
                         <span class="skill-tag">Agentic AI</span>
-                        <span class="skill-tag">Multi-agent Systems</span>
+                        <span class="skill-tag">Generative AI</span>
                         <span class="skill-tag">Large Language Models (LLMs)</span>
-                        <span class="skill-tag">Retrieval Augmented Generation (RAG)</span>
+                        <span class="skill-tag">Retrieval-Augmented Generation (RAG)</span>
+                        <span class="skill-tag">Multi-Agent Systems</span>
                         <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Reinforcement Learning (RL)</span>
+                        <span class="skill-tag">Preference-Based RL Fine-Tuning</span>
                         <span class="skill-tag">Natural Language Processing (NLP)</span>
                         <span class="skill-tag">Machine Learning (ML)</span>
-                        <span class="skill-tag">Reinforcement Learning (RL)</span>
-                        <span class="skill-tag">RLHF</span>
+                        <span class="skill-tag">Model Fine-Tuning</span>
+                        <span class="skill-tag">Model Evaluation</span>
                         <span class="skill-tag">Information Retrieval</span>
-                        <span class="skill-tag">Model Training & Fine-tuning</span>
-                        <span class="skill-tag">Model Architecture Design</span>
                         <span class="skill-tag">Responsible AI</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <h3><i class="fas fa-diagram-project"></i> Agent Frameworks & LLM Tooling</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Agent Orchestration</span>
+                        <span class="skill-tag">Google ADK</span>
+                        <span class="skill-tag">Model Context Protocol (MCP)</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Azure AI Foundry</span>
+                        <span class="skill-tag">Gemini</span>
+                        <span class="skill-tag">OpenAI</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Frameworks</h3>
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Amazon Web Services (AWS)</span>
+                        <span class="skill-tag">Google Cloud Platform (GCP)</span>
                         <span class="skill-tag">Azure DevOps</span>
-                        <span class="skill-tag">Django</span>
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Git Version Control</span>
-                        <span class="skill-tag">JIRA</span>
-                        <span class="skill-tag">Google Colab</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Continuous Integration/Continuous Delivery (CI/CD)</span>
+                        <span class="skill-tag">Microservices</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming & Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Node.js / Express</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Data & Search Infrastructure</h3>
+                    <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">Vector Databases</span>
+                        <span class="skill-tag">Milvus</span>
+                        <span class="skill-tag">Neo4j (Knowledge Graphs)</span>
+                        <span class="skill-tag">Elasticsearch</span>
+                        <span class="skill-tag">Watson Discovery</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Flink</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> AI/ML Libraries & APIs</h3>
+                    <h3><i class="fas fa-flask"></i> Tools, Research & Practices</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Hugging Face</span>
                         <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">NLTK</span>
                         <span class="skill-tag">MLflow</span>
-                        <span class="skill-tag">APIs</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Software Engineering Practices</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">AI/ML Experimentation & Research</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Atlassian Jira</span>
                         <span class="skill-tag">Agile Development</span>
-                        <span class="skill-tag">Microservices</span>
-                        <span class="skill-tag">Project Planning</span>
-                        <span class="skill-tag">Experimentation & Research</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                    <h3><i class="fas fa-users"></i> Leadership & Collaboration</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Team Management</span>
-                        <span class="skill-tag">Teamwork</span>
-                        <span class="skill-tag">Project Planning</span>
-                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Cross-functional Collaboration</span>
+                        <span class="skill-tag">Ownership & Accountability</span>
                     </div>
                 </div>
             </div>
@@ -831,7 +1098,7 @@
                         <label for="contactMessage">Message</label>
                         <textarea id="contactMessage" required maxlength="5000" rows="5" placeholder="What would you like to say?"></textarea>
                     </div>
-                    <!-- Honeypot field — hidden from real visitors, catches simple bots -->
+                    <!-- Honeypot field, hidden from real visitors, catches simple bots -->
                     <div class="contact-honeypot" aria-hidden="true">
                         <label for="contactWebsite">Leave this field blank</label>
                         <input type="text" id="contactWebsite" tabindex="-1" autocomplete="off">

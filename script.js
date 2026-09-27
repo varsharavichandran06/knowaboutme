@@ -46,7 +46,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Modal functionality
-const experienceCards = document.querySelectorAll('.experience-card');
+const experienceCards = document.querySelectorAll('.experience-card, .project-card');
 const modals = document.querySelectorAll('.modal');
 const modalCloses = document.querySelectorAll('.modal-close');
 
@@ -172,7 +172,7 @@ if (footerYear) {
     footerYear.textContent = `© ${currentYear} Varsha Ravichandran. All rights reserved.`;
 }
 
-/* Chat widget frontend (disabled for now — backend not deployed)
+/* Chat widget frontend (disabled for now, backend not deployed)
 const chatToggle = document.getElementById('chatToggle');
 const chatWindow = document.getElementById('chatWindow');
 const chatClose = document.getElementById('chatClose');
@@ -252,11 +252,11 @@ questionInput?.addEventListener('keydown', (e) => {
 });
 */
 
-/* Contact form — custom-styled inputs, submitted directly to Google Forms
+/* Contact form, custom-styled inputs, submitted directly to Google Forms
    behind the scenes (no visible Google UI, no backend server).
 
-   Entry IDs and the target URL were extracted from the live form's HTML —
-   if you add, remove, or reorder questions in the Google Form, these will
+   Entry IDs and the target URL were extracted from the live form's HTML.
+   If you add, remove, or reorder questions in the Google Form, these will
    go stale and need to be re-extracted. */
 const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSek85N4f0PbgGF_acNbpFLY7nyfcO8QK-0QAkmWnrY_2Z-Rlg/formResponse';
 const GOOGLE_FORM_ENTRIES = {
@@ -281,7 +281,7 @@ contactForm?.addEventListener('submit', async (e) => {
     const gotcha = document.getElementById('contactWebsite').value.trim(); // honeypot
 
     if (gotcha) {
-        // Bot filled the hidden field — pretend success, don't actually send.
+        // Bot filled the hidden field, so pretend success and don't actually send.
         contactStatus.textContent = "Message sent! I'll get back to you soon.";
         contactStatus.className = 'contact-status success';
         contactForm.reset();
@@ -314,7 +314,7 @@ contactForm?.addEventListener('submit', async (e) => {
     try {
         // Google Forms doesn't send CORS headers, so the browser blocks us from
         // reading the response. 'no-cors' lets the POST go through anyway; we just
-        // can't confirm success from the response itself — only that it didn't
+        // can't confirm success from the response itself, only that it didn't
         // fail at the network level (offline, DNS, etc).
         await fetch(GOOGLE_FORM_ACTION, {
             method: 'POST',
